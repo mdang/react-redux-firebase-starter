@@ -9,6 +9,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 
+import dotenv from 'dotenv';
+dotenv.config({ silent: true });
+
 import rootReducer from './reducers';
 
 const logger = createLogger();

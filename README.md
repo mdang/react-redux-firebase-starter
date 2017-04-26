@@ -1,4 +1,4 @@
-# react-redux-starter
+# react-redux-firebase-starter
 
 > Adapted from [React-Redux-Boilerplate](https://github.com/buckyroberts/React-Redux-Boilerplate) by Bucky Roberts for `create-react-app`
 

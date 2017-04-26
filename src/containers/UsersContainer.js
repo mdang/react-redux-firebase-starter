@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectUser } from '../actions/index'
+import { addUser } from '../actions/index'
 
 import Users from '../components/Users'
 
@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 // Get actions and pass them as props to to Users
 //  now Users has this.props.selectUser
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ selectUser }, dispatch);
+  return bindActionCreators({ addUser }, dispatch);
 }
 
 // We don't want to return the plain Users (component) anymore, we want to return the smart Container

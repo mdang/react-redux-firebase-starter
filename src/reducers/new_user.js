@@ -2,8 +2,8 @@ import * as types from '../constants/ActionTypes';
 
 export default (state=null, action) => {
   switch (action.type) {
-    case types.USER_SELECTED:
-      return action.payload;
+    case types.ADD_USER:
+      return action.user;
     default:
       return state;
   }

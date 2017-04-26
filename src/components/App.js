@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import './App.css';
 
 import UsersContainer from '../containers/UsersContainer';
-import UserDetailsContainer from '../containers/UserDetailsContainer';
+import AddUserContainer from '../containers/AddUserContainer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>React Redux Starter</h1>
+        <h1>React Redux Firebase Starter</h1>
+        <AddUserContainer />
 
         <UsersContainer />
-        <UserDetailsContainer />
       </div>
     );
   }
