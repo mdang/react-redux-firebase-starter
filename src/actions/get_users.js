@@ -1,7 +1,26 @@
 import * as types from '../constants/action_types';
 import { database, firebaseListToArray } from '../utils/firebase';
 
-export function getUsers() {
+const getUsersRequestedAction = () => {
+  return {
+    type: types.GET_USERS_REQUESTED
+  };
+}
+
+const getUsersRejectedAction = () => {
+  return {
+    type: types.GET_USERS_REJECTED
+  }
+}
+
+const getUsersFulfilledAction = (users) => {
+  return {
+    type: types.GET_USERS_FULFILLED,
+    users
+  };
+}
+
+export const getUsers = () => {
   return dispatch => {
     dispatch(getUsersRequestedAction());
     return database.ref('/users').once('value', snap => {
@@ -13,24 +32,4 @@ export function getUsers() {
       dispatch(getUsersRejectedAction());
     });
   }
-}
-
-
-function getUsersRequestedAction() {
-  return {
-    type: types.GET_USERS_REQUESTED
-  };
-}
-
-function getUsersRejectedAction() {
-  return {
-    type: types.GET_USERS_REJECTED
-  }
-}
-
-function getUsersFulfilledAction(users) {
-  return {
-    type: types.GET_USERS_FULFILLED,
-    users
-  };
 }

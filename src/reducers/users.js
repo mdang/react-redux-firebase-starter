@@ -21,12 +21,14 @@ export default function UsersReducer(state=[], action) {
         inProgress: false,
         success: 'Got users from Firebase'
       });
-      // @todo Look into making copy of array instead of using Object.assign
-      newState.users = [];
-      if (users) {
-        newState.users = users;
-      }
+      newState.users = users || [];
+
       return newState.users;
+    }
+    case types.USER_ADDED: {
+      // @todo
+
+      return state;
     }
 
     default:

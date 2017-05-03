@@ -9,11 +9,4 @@ const rootReducer = combineReducers({
   addUser: AddUserReducer
 });
 
-/*
-  {
-    'users': [],
-    'newUser': {}
-  }
-*/
-
 export default rootReducer;

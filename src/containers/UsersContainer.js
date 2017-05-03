@@ -2,11 +2,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getUsers } from '../actions/get_users'
 
+import { watchUserAddedEvent } from '../actions/user_added_event';
+
 import Users from '../components/Users'
 
 // Get app state and pass it as props to Users
 //  whenever state changes, the Users will automatically re-render
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   console.log('state', state);
   return {
     users: state.users
@@ -15,7 +17,8 @@ const mapStateToProps = (state) => {
 
 // Get actions and pass them as props to to Users
 //  now Users has this.props.selectUser
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
+  watchUserAddedEvent(dispatch);
   return bindActionCreators({ getUsers }, dispatch);
 }
 
